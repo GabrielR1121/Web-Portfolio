@@ -79,3 +79,28 @@ header {
 
 
 /* End of Home CSS */
+
+/* Start of Work Experience Css */
+.outer-table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outer-table th, .outer-table td {
+    border: 2px solid #000;
+    text-align: center;
+    padding: 20px;
+}
+
+.inner-table {
+    border-collapse: collapse;
+}
+
+.inner-table td {
+    border: transparent; /* Adjust border as needed */
+    padding: 8px; /* Optional: Add padding for better visual appearance */
+}
+/* End of Work Experience Css */

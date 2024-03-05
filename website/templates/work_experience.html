@@ -1,3 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Work Experience{% endblock %}
 {% block subtitle %}Work Experience Page{% endblock %}
+
+{%block content%}
+<table class="outer-table">
+    <tr>
+        <th>Company Name</th>
+        <th>Role</th>
+        <th>Description</th>
+        <th>Start to End</th>
+
+    </tr>
+    <tr>
+        <td>
+            <table class="inner-table">
+                <tr>
+                    <td>[Insert Name]</td>
+                </tr>
+                <tr>
+                    <td>[Insert Company Logo]</td>
+                </tr>
+            </table>
+        </td>
+        <td>[Insert Title]</td>
+        <td>[Insert description]</td>
+        <td>[Insert Start & End Date]</td>
+    </tr>
+</table>
+{%endblock%}
