@@ -1,0 +1,81 @@
+/* Start of Base CSS */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+nav {
+    justify-content: space-around;
+}
+
+
+nav a:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #000;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-top: auto;
+    border-top: 2px solid #000;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 2px solid #000;
+}
+
+/* End of Base CSS */
+
+/* Start of Home CSS */
+
+.content-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    text-align: center;
+    /* Center inline content within the container */
+}
+
+.content-image {
+    width: 320px;
+    height: 300px;
+    margin-left: 20px;
+}
+
+.content-text {
+    max-width: 600px;
+    /* Adjust the maximum width of the paragraph */
+}
+
+.content-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-link {
+    margin: 0 10px;
+}
+
+.icon-link img {
+    width: 50px;
+    /* Adjust the size of the icons as needed */
+    height: 50px;
+}
+
+
+/* End of Home CSS */
