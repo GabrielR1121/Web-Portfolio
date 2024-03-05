@@ -22,6 +22,12 @@ def awards():
     return render_template("awards.html")
 
 
+# Creates a route to the leadership page
+@views.route("/leadership", methods=["GET"])
+def leadership():
+    return render_template("leadership.html")
+
+
 # Creates a route to the projects page
 @views.route("/projects", methods=["GET"])
 def projects():
