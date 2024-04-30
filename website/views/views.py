@@ -61,11 +61,14 @@ def projects():
     if os.path.exists("website/static/data/github.json"):
 
         with open("website/static/data/github.json", "r") as json_file:
+            github_data = json.load(json_file)
+
+        with open("website/static/data/project.json", "r") as json_file:
             project_data = json.load(json_file)
 
         # Parse JSON data into objects
         projects = {}
-        for key, value in project_data.items():
+        for key, value in github_data.items():
             projects[key] = Project(
                 value["name"],
                 value["description"],
@@ -74,7 +77,7 @@ def projects():
                 value["languages"],
             )
 
-        return render_template("projects.html", projects=projects)
+        return render_template("projects.html", projects=projects,project_data=project_data)
     else:
         return render_template("loading.html")
 

@@ -8,10 +8,9 @@
 </div>
 <table class="outer-table">
     <tr>
-        <th>{{work_data.comp_name}}</th>
-        <th>{{work_data.comp_role}}</th>
-        <th>{{work_data.comp_desc}}</th>
-        <th>{{work_data.start_end}}</th>
+        {%for header in work_data.table_header%}
+        <th>{{header.title}}</th>
+        {% endfor %}
     </tr>
 
     {% for work in work_data.company%}

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Projects{% endblock %}
-{% block subtitle %}Projects Page{% endblock %}
+{% block title %}{{project_data.title}}{% endblock %}
+{% block subtitle %}{{project_data.subtitle}}{% endblock %}
 
 {%block content%}
 <table class="outer-table">
     <tr>
-        <th>Project Name</th>
-        <th>Duration</th>
-        <th>Description</th>
-        <th>Languages Used</th>
+        {%for header in project_data.table_header%}
+        <th>{{header.title}}</th>
+        {% endfor %}
     </tr>
+
     {% for key, data in projects.items() %}
     <tr>
         <td>{{data.name}}</td>

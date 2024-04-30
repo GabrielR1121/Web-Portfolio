@@ -1,15 +1,25 @@
 {
     "title": "Work Experience",
     "subtitle": "Work Experience Page",
-    "comp_name": "Company name",
-    "comp_role": "Role",
-    "comp_desc": "Description",
-    "start_end": "Start to End",
+    "table_header": [
+        {
+            "title": "Company Name"
+        },
+        {
+            "title": "Role"
+        },
+        {
+            "title": "Description"
+        },
+        {
+            "title": "Start to End"
+        }
+    ],
     "company": [
         {
             "name": "Pratt & Whitney",
             "logo": "../static/images/Logos/pratt-logo.png",
-            "class":"pratt-logo",
+            "class": "pratt-logo",
             "role": "Software Developer, Intern",
             "description": [
                 {
@@ -22,11 +32,10 @@
             "start": "May 2022",
             "end": "July 2022"
         },
-
         {
             "name": "Pratt & Whitney",
             "logo": "../static/images/Logos/pratt-logo.png",
-            "class":"pratt-logo",
+            "class": "pratt-logo",
             "role": "Software Developer, Intern",
             "description": [
                 {
@@ -42,7 +51,7 @@
         {
             "name": "University Of Puerto Rico - Bayamon",
             "logo": "../static/images/Logos/UPR_at_Bayamon_Seal.svg.png",
-            "class":"upr-logo",
+            "class": "upr-logo",
             "role": "Programming Tutor",
             "description": [
                 {
@@ -55,6 +64,5 @@
             "start": "August 2020",
             "end": "May 2022"
         }
-        
     ]
 }

@@ -1,0 +1,18 @@
+{
+    "title": "Projects",
+    "subtitle": "Projects Page",
+    "table_header": [
+        {
+            "title": "Project Name"
+        },
+        {
+            "title": "Duration"
+        },
+        {
+            "title": "Description"
+        },
+        {
+            "title": "Languages Used"
+        }
+    ]
+}
