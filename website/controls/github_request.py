@@ -3,10 +3,8 @@ import time
 import requests
 import json
 import atexit
-from ..config.config import GitHub_User
+from ..config.config import GitHub_User, github_filepath, timer
 
-#Global Variables
-json_name = "github.json"
 
 # Makes the request to the url in order to get the data
 def make_http_get_request(url):
@@ -69,10 +67,12 @@ def load_json(filename):
 def write_lock_file(lock_file):
     open(lock_file, "w").close()
 
+
 # Deletes the lock file once the procedure is completed
 def remove_lock_file(lock_file):
     if os.path.exists(lock_file):
         os.unlink(lock_file)
+
 
 # Verifies if the json file with the data has been edited in the specified amount of time
 def is_file_recently_modified(filename, max_age_seconds):
@@ -81,6 +81,7 @@ def is_file_recently_modified(filename, max_age_seconds):
     modification_time = os.path.getmtime(filename)
     current_time = time.time()
     return current_time - modification_time < max_age_seconds
+
 
 # Main method for getting and storing the data collected from the GitHub API
 def get_project_info():
@@ -102,12 +103,12 @@ def get_project_info():
         # Prepares to connect to GitHub API
         username = GitHub_User
         # location where data will be stored
-        json_filename = f"website/static/data/{json_name}"
+        json_filename = github_filepath
 
         print("The request started. Please Wait..")
 
         # If the file has been edited in the last hour then use the existing data
-        if is_file_recently_modified(json_filename, 3600):
+        if is_file_recently_modified(json_filename, timer):
             print("Using existing JSON file.")
         else:
             # If the file has not been edited for more than an hour then verify if any repositories have been updated.
@@ -134,7 +135,7 @@ def get_project_info():
 
                 # Convert all repos data into a single json file
                 save_to_json(all_repo_data, json_filename)
-                print(f"All repository information saved to {json_name}")
+                print(f"All repository information saved.")
     finally:
         # Deletes the lock file meaning the process has finished
         remove_lock_file(lock_file)

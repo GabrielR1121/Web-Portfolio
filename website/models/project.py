@@ -6,7 +6,6 @@ from datetime import datetime
 
 # This class is to process the data from the projects collected from the GitHub API
 class Project:
-
     #  Each Project class will have the:
     #  * NAME of the repository
     #  * DESCRIPTION of the repository
@@ -46,6 +45,5 @@ class Project:
 
         # Format the datetime object
         formatted_date = datetime_obj.strftime("%B %d, %Y")
-        print(formatted_date)
 
         return formatted_date
