@@ -1,0 +1,44 @@
+{
+    "title": "Home",
+    "subtitle": "Home Page",
+    "about": "I am a driven Computer Science student at the University of Puerto Rico at Bayamon, poised to graduate in December 2023. My journey is highlighted by diverse projects, including game development and database creation, alongside impactful internships at Pratt & Whitney and PREPA. As the former President of the Computer Science Student Association, I've facilitated knowledge-sharing initiatives. Professional roles have refined my skills in software development and programming tutoring. Notable achievements include winning the Best Technical Prize at the Puerto Rico COVID Ideathon and securing fourth place in the XIX Interuniversity Programming Competition. Proficient in Java, .NET Framework, Git, and database management, I'm committed to mastering various technologies and problem-solving.",
+    "profile_picture": [
+        {
+            "link": "../static/images/Me/Formal Profile Pic.jpg",
+            "alt": "Picture of Gabriel Rodriguez"
+        }
+    ],
+    "other_websites": [
+        {
+            "name": "LinkedIn",
+            "link": "https://www.linkedin.com/in/gabriel-e-rodriguez-garcia/",
+            "image_path": "../static/images/icons/LinkedIn Icon.png",
+            "image_source": "https://www.stickpng.com/img/icons-logos-emojis/social-media-icons/linkedin-icon-square",
+            "class": "icon-link",
+            "alt": "LinkedIn Link",
+            "target": "_blank"
+        },
+        {
+            "name": "GitHub",
+            "link": "https://github.com/GabrielR1121",
+            "image_path": "../static/images/icons/GitHub Icon.png",
+            "image_source": "https://pngimg.com/image/73422",
+            "class": "icon-link",
+            "alt": "GitHub Link",
+            "target": "_blank"
+        },
+        {
+            "name": "LeetCode",
+            "link": "https://leetcode.com/KingShrub/",
+            "image_path": "../static/images/icons/leetcode.svg",
+            "image_source": "https://iconscout.com/free-icon/leetcode-3521542",
+            "class": "icon-link",
+            "alt": "LeetCode Link",
+            "target": "_blank"
+        }
+    ],
+    "resume": {
+        "title": "My Resume",
+        "link": "/resume"
+    }
+}

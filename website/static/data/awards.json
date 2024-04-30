@@ -1,0 +1,59 @@
+{
+  "title": "Awards",
+  "subtitle": "Awards Page",
+  "awards": [
+    {
+      "competition": "XIX Interuniversity Programming Competition",
+      "award": "Fourth Place",
+      "date": "April 2022",
+      "details": [
+        "Competed against 18 groups of students at an expert level with a time limit of three hours.",
+        "Solved complex programming exercises using Java and different programming techniques to result in the best algorithmic complexity."
+      ],
+      "carousel": {
+        "id": "carouselProgramming",
+        "controls": true
+      },
+      "media": {
+        "images": [
+          {
+            "src": "../static/images/Awards/programming_comp/Receiving Award 1.jpeg",
+            "alt": "Receiving Award 1"
+          },
+          {
+            "src": "../static/images/Awards/programming_comp/Receiving Award 2.jpeg",
+            "alt": "Receiving Award 2"
+          }
+        ],
+        "videos": []
+      }
+    },
+    {
+      "competition": "Puerto Rico Ideathon",
+      "award": "Best Technical Prize",
+      "date": "January 2021",
+      "details": [
+        "Developed with a team a solution to bring the Puerto Rican economy into the spotlight by creating a program to help locals and tourists alike find local businesses across the island.",
+        "Presented a 5-minute pitch in front of a live audience that included the prototype and the business model of the application."
+      ],
+      "carousel": {
+        "id": "carouselIdeathon",
+        "controls": true
+      },
+      "media": {
+        "images": [
+          {
+            "src": "../static/images/Awards/ideathon/Ideathon_Winner.png",
+            "alt": "Ideathon Winner"
+          }
+        ],
+        "videos": [
+          {
+            "src": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fprcovidideathon%2Fvideos%2F427200251827676%2F&show_text=false&width=560&t=0",
+            "description": "A video showcasing the pitch presentation"
+          }
+        ]
+      }
+    }
+  ]
+}

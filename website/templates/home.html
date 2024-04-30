@@ -1,46 +1,46 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block subtitle %}Home Page{% endblock %}
+{% block title %}{{home_data.title}}{% endblock %}
+{% block subtitle %}{{home_data.subtitle}}{% endblock %}
 
 {% block content %}
 <div class="content-container">
-    <p class="content-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-        dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur.
-    </p>
     <table>
         <tr>
-            <td><img class="content-image" src="../static/images/Me/Formal Profile Pic.jpg"
-                    alt="Description of the image"></td>
-        </tr>
+            <td>
+                <h1>Gabriel E. Rodriguez Garcia</h1>
+            </td>
 
+        </tr>
         <tr>
             <td>
+                <p class="content-text">{{home_data.about}}</p>
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            {% for data in home_data.profile_picture %}
+            <td><img class="content-image" src="{{data.link}}" alt="{{data.alt}}"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>
+                <a   class="content-resume" href="{{home_data.resume.link}}">{{home_data.resume.title}}</a>
+            </td>
+        </tr>
+        <tr>
+
+            <td>
                 <div class="content-icons">
-                    <a href="https://www.linkedin.com/in/gabriel-e-rodriguez-garcia/" class="icon-link">
-                        <img src="path/to/icon1.png" alt="Icon 1">
-                    </a>
-                    <a href="https://github.com/GabrielR1121" class="icon-link">
-                        <img src="path/to/icon2.png" alt="Icon 2">
-                    </a>
-                    <a href="https://leetcode.com/KingShrub/" class="icon-link">
-                        <img src="path/to/icon3.png" alt="Icon 3">
-                    </a>
+                    {% for data in home_data.other_websites %}
+                    <a href="{{data.link}}" class="{{data.class}}" target="{{data.target}}">
+                        <img src="{{data.image_path}}" alt="{{data.alt}}">
+                        {% endfor %}
                 </div>
             </td>
         </tr>
-
-        <tr>
-            <td><a href="/resume">My Resume</a></td>
-        </tr>
     </table>
 </div>
-
-
 {% endblock %}

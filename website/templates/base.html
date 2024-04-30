@@ -26,23 +26,24 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="../static/javascript/script.js" defer></script>
 
-    <title>{% block title %}Not Named{% endblock %}</title>
+    <title>{% block title %}{{base_data.title}}{% endblock %}</title>
 </head>
 
 
 
 
-<body>
-    <header>
+<body class="complementary-color second-accent-color">
+    <header class="main-color ">
         <nav>
-            <a href="/awards">Awards</a>
-            <a href="/leadership">Leadership</a>
-            <a href="/projects">Projects</a>
-            <a href="/work-experience">Work Experience</a>
+            {% for item in base_data.taskbar %}
+            <a href="{{ item.url }}"> {{ item.name }}</a>
+            {% endfor %}
         </nav>
     </header>
 
@@ -54,10 +55,10 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="main-color">
         <div class="footer-content">
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> Gabriel E. Rodriguez Garcia. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> {{base_data.copyright}}</p>
             </div>
         </div>
     </footer>

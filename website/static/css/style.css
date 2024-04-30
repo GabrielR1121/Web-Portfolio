@@ -6,6 +6,28 @@ body {
     margin: 0;
 }
 
+/* For headers */
+.main-color {
+    background-color: #228B22;
+}
+
+
+a,
+footer {
+    color: black;
+    font-size: 30px;
+}
+
+.complementary-color {}
+
+/* White and clean */
+.first-accent-color {}
+
+/* For text and accent */
+.second-accent-color {}
+
+/* highlighting things */
+.highlight-color {}
 
 nav {
     justify-content: space-around;
@@ -25,7 +47,7 @@ footer {
     font-size: 14px;
     color: #333;
     margin-top: auto;
-    border-top: 2px solid #000;
+    border-top: 2px solid #36454F;
 }
 
 header {
@@ -33,34 +55,39 @@ header {
     padding: 20px;
     font-size: 14px;
     color: #333;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #36454F;
 }
 
 /* End of Base CSS */
 
 /* Start of Home CSS */
 
+body {
+    background-color: #D3D3D3;
+}
+
 .content-container {
     display: flex;
     margin-top: 20px;
     justify-content: center;
-    /* Center content horizontally */
     align-items: center;
-    /* Center content vertically */
     text-align: center;
-    /* Center inline content within the container */
 }
 
 .content-image {
     width: 320px;
     height: 300px;
     margin-left: 20px;
+    border: #4682B4 2px solid;
 }
 
 .content-text {
     max-width: 600px;
-    /* Adjust the maximum width of the paragraph */
+    padding-bottom: 110px;
+
 }
+
+.content-resume {}
 
 .content-icons {
     display: flex;
@@ -77,10 +104,17 @@ header {
     height: 50px;
 }
 
-
 /* End of Home CSS */
 
 /* Start of Work Experience Css */
+.work-gantt {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+
+}
+
 .outer-table {
     border: 2px solid #000;
     border-collapse: collapse;
@@ -89,7 +123,8 @@ header {
     margin-right: auto;
 }
 
-.outer-table th, .outer-table td {
+.outer-table th,
+.outer-table td {
     border: 2px solid #000;
     text-align: center;
     padding: 20px;
@@ -99,8 +134,62 @@ header {
     border-collapse: collapse;
 }
 
-.inner-table td {
-    border: transparent; /* Adjust border as needed */
-    padding: 8px; /* Optional: Add padding for better visual appearance */
+.outer-table ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
+
+.inner-table td {
+    border: transparent;
+    padding: 8px;
+}
+
+.pratt-logo {
+    width: 190px;
+    height: 100px;
+}
+
+.upr-logo {
+    width: 130px;
+    height: 130px;
+}
+
 /* End of Work Experience Css */
+
+
+/* Start of Awards Css */
+
+.carousel-inner img {
+    width: 500px !important;
+    /* Adjust to your desired width */
+    height: 300px !important;
+    /* Adjust to your desired height */
+    margin: auto;
+    /* Optional: Center the image horizontally */
+}
+
+.awards-table {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.awards-table th {
+    text-align: left;
+    padding: 10px;
+}
+
+.awards-table tr {
+    text-align: right;
+}
+
+/* End of Awards Css */
+
+
+/* Start of Leadership Css */
+.lead-content {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* End of Leadership Css */

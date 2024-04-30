@@ -1,0 +1,26 @@
+{
+    "title": "Not Name",
+    "taskbar": [
+        {
+            "name": "Home",
+            "url": "/"
+        },
+        {
+            "name": "Awards",
+            "url": "/awards"
+        },
+        {
+            "name": "Leadership",
+            "url": "/leadership"
+        },
+        {
+            "name": "Projects",
+            "url": "/projects"
+        },
+        {
+            "name": "Work Experience",
+            "url": "/work-experience "
+        }
+    ],
+    "copyright": "Gabriel E. Rodriguez Garcia. All rights reserved."
+}

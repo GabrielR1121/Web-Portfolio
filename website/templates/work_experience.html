@@ -1,29 +1,42 @@
 {% extends "base.html" %}
-{% block title %}Work Experience{% endblock %}
-{% block subtitle %}Work Experience Page{% endblock %}
+{% block title %}{{work_data.title}}{% endblock %}
+{% block subtitle %}{{work_data.subtitle}}{% endblock %}
 
 {%block content%}
+<div class="work-gantt">
+    <p>[Insert Plotly Gantt Chart]</p>
+</div>
 <table class="outer-table">
     <tr>
-        <th>Company Name</th>
-        <th>Role</th>
-        <th>Description</th>
-        <th>Start to End</th>
+        <th>{{work_data.comp_name}}</th>
+        <th>{{work_data.comp_role}}</th>
+        <th>{{work_data.comp_desc}}</th>
+        <th>{{work_data.start_end}}</th>
     </tr>
+
+    {% for work in work_data.company%}
     <tr>
         <td>
             <table class="inner-table">
                 <tr>
-                    <td>[Insert Name]</td>
+                    <td>{{work.name}}</td>
                 </tr>
                 <tr>
-                    <td>[Insert Company Logo]</td>
+                    <td><img src="{{work.logo}}" class="{{work.class}}"></td>
                 </tr>
             </table>
         </td>
-        <td>[Insert Role]</td>
-        <td>[Insert description]</td>
-        <td>[Insert Start & End Date]</td>
+        <td>{{work.role}}</td>
+        <td>
+            <ul>
+                {% for desc in work.description %}
+                <li>{{desc.text}}</li>
+                {% endfor %}
+            </ul>
+        </td>
+        <td>{{work.start}} - {{work.end}}</td>
     </tr>
+    {% endfor %}
+
 </table>
 {%endblock%}

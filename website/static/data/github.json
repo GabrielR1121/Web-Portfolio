@@ -1,0 +1,60 @@
+{
+    "CareBeat": {
+        "name": "CareBeat",
+        "description": null,
+        "created": "2023-09-25T20:43:27Z",
+        "updated": "2024-04-29T04:52:29Z",
+        "languages": {
+            "Python": 125177,
+            "HTML": 52310,
+            "CSS": 2027
+        }
+    },
+    "Treedle": {
+        "name": "Treedle",
+        "description": "Recreation of the famous Wordle game. This is for educational purposes in order to practice app making process and MVVC File Structures",
+        "created": "2023-07-01T04:08:49Z",
+        "updated": "2023-08-09T19:58:24Z",
+        "languages": {
+            "C#": 24296
+        }
+    },
+    "LeetCode-Exercises": {
+        "name": "LeetCode-Exercises",
+        "description": "All Leetcode.com exercises solved by me in Java, Python, JavaScript or SQL",
+        "created": "2022-09-20T18:47:14Z",
+        "updated": "2023-08-02T04:07:05Z",
+        "languages": {
+            "Java": 44994,
+            "JavaScript": 34285,
+            "Python": 32036
+        }
+    },
+    "Galaxy-Wars": {
+        "name": "Galaxy-Wars",
+        "description": "Project for the course SICI4029: Fundamentals of Operating Systems. * Project requirements: Develop a creative and innovative program implementing threads. The program must have sound, movement using the run() method of the thread class, and a Graphical User interface(GUI). * Authors: Claudia P. Monge Torres, Gabriel E. Rodriguez Garcia",
+        "created": "2020-12-02T18:38:29Z",
+        "updated": "2023-07-28T05:45:06Z",
+        "languages": {
+            "Java": 19055
+        }
+    },
+    "ClueBoardGame": {
+        "name": "ClueBoardGame",
+        "description": "A recreation of the classic Clue board game, where players take on the roles of detectives to solve the murder of Mr. Boddy. Built using Java with threaded player movement, and secure card communication. This was built as a group final project from our Data Communications Class",
+        "created": "2021-10-28T14:46:33Z",
+        "updated": "2023-07-28T04:35:33Z",
+        "languages": {
+            "Java": 83648
+        }
+    },
+    "Monoloro_Final_Project": {
+        "name": "Monoloro_Final_Project",
+        "description": "This is my final project for my database class SICI 4030 (Design and Programming of Databases). The objective was to build a functioning Oracle database step by step. The project includes matrix building, construction of an ERD, sample data, SQL programming, queries, and an SQL-PLUS report.",
+        "created": "2022-08-21T23:40:04Z",
+        "updated": "2022-08-21T23:47:54Z",
+        "languages": {
+            "PLSQL": 47534
+        }
+    }
+}

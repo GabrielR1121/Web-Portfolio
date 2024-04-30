@@ -9,13 +9,22 @@
         <th>Duration</th>
         <th>Description</th>
         <th>Languages Used</th>
-
     </tr>
+    {% for key, data in projects.items() %}
     <tr>
-        <td>[Insert Name]</td>
-        <td>[Insert Duration]</td>
-        <td>[Insert description]</td>
-        <td>[Insert Skill Pie Chart]</td>
+        <td>{{data.name}}</td>
+        <td>{{data.created}} - {{data.updated}}</td>
+        <td>{{data.description}}</td>
+        <td>
+            <div id="chart{{ loop.index }}"></div>
+        </td>
     </tr>
+    {% endfor %}
 </table>
+<script>
+    {% for key, project in projects.items() %}
+    var {{ project.name| replace('-', '_') }} = {{ project.create_chart() | safe }};
+    Plotly.plot("chart{{ loop.index }}", {{ project.name | replace('-', '_') }}, {});
+    {% endfor %}
+</script>
 {%endblock%}

@@ -1,0 +1,89 @@
+{
+    "title": "Leadership",
+    "subtitle": "Leadership Page",
+    "data": [
+        {
+            "id": "carouselLeadership",
+            "images": [
+                {
+                    "src": "../static/images/Leadership/1.jpg",
+                    "alt": "First Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/2.jpg",
+                    "alt": "Second Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/3.jpg",
+                    "alt": "Third Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/4.jpg",
+                    "alt": "Fourth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/5.jpg",
+                    "alt": "Fifth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/6.png",
+                    "alt": "Sixth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/7.png",
+                    "alt": "Seventh Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/8.png",
+                    "alt": "Eighth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/9.png",
+                    "alt": "Ninth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/10.png",
+                    "alt": "Tenth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/11.png",
+                    "alt": "Eleventh Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/12.png",
+                    "alt": "Twelfth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/13.png",
+                    "alt": "Thirteenth Slide"
+                },
+                {
+                    "src": "../static/images/Leadership/14.png",
+                    "alt": "Fourteenth Slide"
+                }
+            ],
+            "paragraphs": [
+                {
+                    "title": "",
+                    "text": "As President of the Computer Science Association (A.E.C.C), I spearheaded initiatives to elevate our community\nand empower its members. From navigating challenges during the pandemic to fostering a vibrant atmosphere of\nlearning and growth, my tenure from 2022 to 2023 was marked by transformative endeavors. My tenure as President\nof A.E.C.C was defined by a commitment to excellence, innovation, and inclusivity. Through collaborative efforts\nand unwavering dedication, we not only navigated challenges but also laid the foundation for a thriving\ncommunity of aspiring technologists. As I reflect on this journey, I am immensely proud of the impact we've made\nand the legacy we've built together."
+                },
+                {
+                    "title": "Empowering Through Education:",
+                    "text": "One of our primary objectives was to equip members with the skills and knowledge vital for success in the tech\nindustry. I personally conducted weekly training sessions, guiding groups of up to 10 individuals in mastering\nprogramming competition exercises. These efforts culminated in remarkable achievements at inter-university\ncompetitions, with our trainees consistently ranking in the top ten out of 18 to 20 teams."
+                },
+                {
+                    "title": "Expanding Membership and Opportunities:",
+                    "text": "Under my leadership, the association experienced unprecedented growth, expanding from a modest 20 members to a\nthriving community of over 70 enthusiasts. We facilitated this expansion by offering a diverse array of\nresources, including seminars, tutoring, orientations, and other avenues for professional and personal\ndevelopment."
+                },
+                {
+                    "title": "Career Week: Paving Paths to Success:",
+                    "text": "A hallmark event of my presidency was the highly successful Career Week. By inviting renowned corporations and small businesses, we provided invaluable insights into career prospects and entrepreneurship opportunities. Small business representatives shared invaluable wisdom on starting one's venture post-graduation, while larger corporations offered insights into job and internship opportunities."
+                },
+                {
+                    "title": "Community and Collaboration:",
+                    "text": "Beyond professional development, our association fostered a sense of belonging through various community activities. From movie nights to interactive gaming sessions, we created opportunities for members to bond and unwind. Moreover, we forged strong partnerships with faculty members to enhance the overall experience, bridging the gap between academia and student life."
+                }
+            ]
+        }
+    ]
+}
