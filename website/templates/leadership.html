@@ -3,39 +3,35 @@
 {% block subtitle %}{{leadership_data.subtitle}}{% endblock %}
 {% block content %}
 <div class="lead-content">
-    {% for leader in leadership_data.data %}
-    <div id="{{leader.id}}" class="carousel slide" data-ride="carousel">
+    <div id="{{leadership_data.data.id}}" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            {% for image in leader.images %}
-            <li data-target="#{{ leader.id }}" data-slide-to="{{ loop.index }}" {% if loop.first %}class="active" {%
+            {% for image in leadership_data.data.images %}
+            <li data-target="#{{ leadership_data.data.id }}" data-slide-to="{{ loop.index }}" {% if loop.first %}class="active" {%
                 endif %}></li>
             {% endfor %}
         </ol>
         <div class="carousel-inner">
-            {% for image in leader.images %}
+            {% for image in leadership_data.data.images %}
             <div class="carousel-item {% if loop.first %}active{% endif %}">
                 <img class="d-block w-100" src="{{ image.src }}" alt="{{ image.alt }}">
             </div>
             {% endfor %}
         </div>
-        <a class="carousel-control-prev" href="#{{leader.id}}" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#{{leadership_data.data.id}}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#{{leader.id}}" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#{{leadership_data.data.id}}" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
     <br />
 
-    {% for paragraph in leader.paragraphs %}
+    {% for paragraph in leadership_data.data.paragraphs %}
     <p><strong>{{ paragraph.title }}</strong></p>
     <p>{{ paragraph.text }}</p>
     {% endfor %}
-
-    {% endfor %}
-
 
 </div>
 {% endblock %}

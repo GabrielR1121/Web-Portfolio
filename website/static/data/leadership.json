@@ -1,8 +1,7 @@
 {
     "title": "Leadership",
     "subtitle": "Leadership Page",
-    "data": [
-        {
+    "data": {
             "id": "carouselLeadership",
             "images": [
                 {
@@ -85,5 +84,4 @@
                 }
             ]
         }
-    ]
 }

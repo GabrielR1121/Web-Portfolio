@@ -21,13 +21,12 @@
 
     <table>
         <tr>
-            {% for data in home_data.profile_picture %}
-            <td><img class="content-image" src="{{data.link}}" alt="{{data.alt}}"></td>
-            {% endfor %}
+            <td><img class="content-image" src="{{home_data.profile_picture.link}}"
+                    alt="{{home_data.profile_picture.alt}}"></td>
         </tr>
         <tr>
             <td>
-                <a   class="content-resume" href="{{home_data.resume.link}}">{{home_data.resume.title}}</a>
+                <a class="content-resume" href="{{home_data.resume.link}}">{{home_data.resume.title}}</a>
             </td>
         </tr>
         <tr>
