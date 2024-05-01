@@ -84,8 +84,8 @@ def is_file_recently_modified(filename, max_age_seconds):
 
 
 # Verify if the repository has been updated by comparing updated dates
-def is_repo_updated(new_repo, old_repo):
-    return new_repo["updated_at"] == old_repo["updated"]
+def is_repo_updated(repo_name, new_repo, old_repo):
+    return new_repo["updated_at"] == old_repo[repo_name]["updated"]
 
 
 def does_file_exist(filepath):
@@ -133,7 +133,7 @@ def get_project_info():
                         existing_data = load_json(json_filename)
                         # If the data already exists and now updates where found then just use the old data
                         if does_file_exist(json_filename) and is_repo_updated(
-                            repo_info, existing_data
+                            repo_name, repo_info, existing_data
                         ):
                             all_repo_data[repo_name] = existing_data[repo_name]
                             print(f"Using existing data for {repo_name}.")

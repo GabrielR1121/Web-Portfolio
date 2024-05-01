@@ -7,6 +7,7 @@ import os
 
 
 views = Blueprint("views", __name__)
+# ** See how i can get all data from this dictionary in other paths
 data = {}
 
 

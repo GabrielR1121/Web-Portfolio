@@ -1,10 +1,12 @@
 import plotly.graph_objects as go
+import json
 
 
-def pie_chart(languages, values, title=""):
+def pie_chart(languages, values):
     """
     Creates the Pie Chart that displays the language distribution within each repo
     """
+
 
     # Create the Pie chart
     fig = go.Figure(
@@ -16,8 +18,12 @@ def pie_chart(languages, values, title=""):
         ],
     )
 
-    # Sets the title and the width and height of the pie chart
-    # ** Create json file for editing this chart. 
-    fig.update_layout(title_text=title, width=350, height=400)
+    # Sets the pie chart to the correct settings
+    fig.update_layout( get_chart_settings() )
 
     return fig
+
+# Gets the settings in the pie_chart.json 
+def get_chart_settings():
+    with open("website/static/data/pie_chart.json", "r") as json_file:
+        return json.load(json_file)
