@@ -28,22 +28,15 @@
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="../static/javascript/script.js" defer></script>
 
     <title>{% block title %}{{base_data.title}}{% endblock %}</title>
 </head>
 
-
-
-
 <body class="complementary-color second-accent-color">
     <header class="main-color ">
-        <nav>
-            {% for item in base_data.taskbar %}
-            <a href="{{ item.url }}"> {{ item.name }}</a>
-            {% endfor %}
+        <nav id="navbar">
         </nav>
     </header>
 
@@ -63,9 +56,31 @@
         </div>
     </footer>
 
+
+    <script>
+        // Function to create navbar dynamically
+        function createNavbar() {
+            var navbar = document.getElementById("navbar");
+            var path = window.location.pathname;
+
+            // Clear existing navbar content
+            navbar.innerHTML = "";
+
+            // Iterate through base_data.taskbar and create navbar items
+            {% for item in base_data.taskbar %}
+            var item_url = "{{ item.url }}";
+            if (item_url != path) {
+                var link = document.createElement("a");
+                link.href = "{{ item.url }}";
+                link.textContent = "{{ item.name }}";
+                navbar.appendChild(link);
+            }
+            {% endfor %}
+        }
+
+        // Call the function to create navbar
+        createNavbar();
+    </script>
 </body>
-
-
-
 
 </html>

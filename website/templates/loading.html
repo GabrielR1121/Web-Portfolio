@@ -48,11 +48,10 @@
                 .then(response => {
                     if (response.ok) {
                         // Data is fetched, redirect to the actual page
-                        console.log("Im here")
                         window.location.href = '/projects'; // Replace '/actual-page' with your actual page URL
                     } else {
                         // Data not fetched yet, wait and check again after a delay
-                        setTimeout(checkDataFetched, 1000); // Check again after 1 second
+                        setTimeout(checkDataFetched, 5000); // Check again after 1 second
                     }
                 })
                 .catch(error => {

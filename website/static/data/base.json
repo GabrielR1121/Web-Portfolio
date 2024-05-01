@@ -3,23 +3,33 @@
     "taskbar": [
         {
             "name": "Home",
-            "url": "/"
+            "url": "/",
+            "data_location":"website/static/data/home.json",
+            "data_name":"home_data"
         },
         {
             "name": "Awards",
-            "url": "/awards"
+            "url": "/awards",
+            "data_location":"website/static/data/awards.json",
+            "data_name":"award_data"
         },
         {
             "name": "Leadership",
-            "url": "/leadership"
+            "url": "/leadership",
+            "data_location":"website/static/data/leadership.json",
+            "data_name":"leadership_data"
         },
         {
             "name": "Projects",
-            "url": "/projects"
+            "url": "/projects",
+            "data_location":"website/static/data/project.json",
+            "data_name":"project_data"
         },
         {
             "name": "Work Experience",
-            "url": "/work-experience "
+            "url": "/work-experience",
+            "data_location":"website/static/data/work.json",
+            "data_name":"work_data"
         }
     ],
     "copyright": "Gabriel E. Rodriguez Garcia. All rights reserved."

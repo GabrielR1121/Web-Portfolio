@@ -2,44 +2,38 @@ from flask import Blueprint, render_template, send_file
 import json
 from ..models.project import Project
 from ..controls.github_request import get_project_info
-from ..config.config import (
-    base_filepath,
-    home_filepath,
-    resume_filepath,
-    award_filepath,
-    leadership_filepath,
-    github_filepath,
-    project_filepath,
-    work_filepath,
-)
+from ..config.config import base_filepath, resume_filepath, github_filepath
 import os
-import threading
 
 
 views = Blueprint("views", __name__)
+data = {}
 
 
 # Define a context processor function to load JSON data
-def load_base_data():
+def load_website_data():
+    get_project_info()
+
     with open(base_filepath, "r") as json_file:
-        base_data = json.load(json_file)
-    thread = threading.Thread(target=get_project_info)
-    thread.start()
-    return {"base_data": base_data}
+        data["base_data"] = json.load(json_file)
+
+    for taskbar in data["base_data"]["taskbar"]:
+        with open(taskbar["data_location"], "r") as json_file:
+            data[taskbar["data_name"]] = json.load(json_file)
+
+    return data
 
 
 # Register the context processor with Flask
 @views.context_processor
 def inject_page_data():
-    return load_base_data()
+    return load_website_data()
 
 
 # Creates a route to the home page
 @views.route("/", methods=["GET"])
 def home():
-    with open(home_filepath, "r") as json_file:
-        home_data = json.load(json_file)
-    return render_template("home.html", home_data=home_data)
+    return render_template("home.html")
 
 
 # Creates a route to download my resume
@@ -51,17 +45,13 @@ def resume():
 # Creates a route to the awards page
 @views.route("/awards", methods=["GET"])
 def awards():
-    with open(award_filepath, "r") as json_file:
-        award_data = json.load(json_file)
-    return render_template("awards.html", award_data=award_data)
+    return render_template("awards.html")
 
 
 # Creates a route to the leadership page
 @views.route("/leadership", methods=["GET"])
 def leadership():
-    with open(leadership_filepath, "r") as json_file:
-        leadership_data = json.load(json_file)
-    return render_template("leadership.html", leadership_data=leadership_data)
+    return render_template("leadership.html")
 
 
 # Creates a route to the projects page
@@ -71,9 +61,6 @@ def projects():
 
         with open(github_filepath, "r") as json_file:
             github_data = json.load(json_file)
-
-        with open(project_filepath, "r") as json_file:
-            project_data = json.load(json_file)
 
         # Parse JSON data into objects
         projects = {}
@@ -86,9 +73,7 @@ def projects():
                 value["languages"],
             )
 
-        return render_template(
-            "projects.html", projects=projects, project_data=project_data
-        )
+        return render_template("projects.html", projects=projects)
     else:
         return render_template("loading.html")
 
@@ -107,6 +92,4 @@ def verify_data():
 # Creates a route the the work experience page
 @views.route("/work-experience", methods=["GET"])
 def work_experience():
-    with open(work_filepath, "r") as json_file:
-        work_data = json.load(json_file)
-    return render_template("work_experience.html", work_data=work_data)
+    return render_template("work_experience.html")

@@ -26,8 +26,8 @@ def get_user_repos(username):
 def get_repo_info(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}"
 
-    # ** Use make_http_get_request here
-    response = requests.get(url)
+    # Use make_http_get_request here
+    response = make_http_get_request(url)
     if response.status_code == 200:
         repo_info = response.json()
         # Makes the request to the GitHub API to get specific language distribution from the specific repo
@@ -83,6 +83,15 @@ def is_file_recently_modified(filename, max_age_seconds):
     return current_time - modification_time < max_age_seconds
 
 
+# Verify if the repository has been updated by comparing updated dates
+def is_repo_updated(new_repo, old_repo):
+    return new_repo["updated_at"] == old_repo["updated"]
+
+
+def does_file_exist(filepath):
+    return os.path.exists(filepath)
+
+
 # Main method for getting and storing the data collected from the GitHub API
 def get_project_info():
     # Stores the path to the config file
@@ -123,8 +132,9 @@ def get_project_info():
                         # Loads the existing json file with repository data in order to compare the new and old data
                         existing_data = load_json(json_filename)
                         # If the data already exists and now updates where found then just use the old data
-                        # ** This is incorrect because it is only verfying if there are new repositories not if the updated date has changed **
-                        if existing_data and repo_name in existing_data:
+                        if does_file_exist(json_filename) and is_repo_updated(
+                            repo_info, existing_data
+                        ):
                             all_repo_data[repo_name] = existing_data[repo_name]
                             print(f"Using existing data for {repo_name}.")
                         else:
