@@ -38,6 +38,7 @@
     ],
     "resume": {
         "title": "My Resume",
-        "link": "/resume"
+        "link": "/resume",
+        "path":"static\\documents\\Resume Gabriel E Rodriguez Garcia.pdf"
     }
 }

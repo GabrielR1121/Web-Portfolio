@@ -13,12 +13,13 @@ class Project:
     #  * The date the repository was last UPDATED
     #  * A dictionary of the LANGUAGE distribution of the repository
     #  * The DATA dictionary will hold the processed data from the language dictionary
-    def __init__(self, name, description, created_at, updated_at, languages):
+    def __init__(self, name, description, created_at, updated_at, languages,pie_path):
         self.name = name
         self.description = description
         self.created = self.convert_to_date(created_at)
         self.updated = self.convert_to_date(updated_at)
         self.languages = {language: int(value) for language, value in languages.items()}
+        self.pie_path = pie_path
         self.data = {}
 
     # Calculates the percentage values of languages used in the project
@@ -34,7 +35,7 @@ class Project:
 
         # Calls the pie_chart method in the graphs.py file in order to create the pie chart
         return json.dumps(
-            graphs.pie_chart(list(self.data.keys()), list(self.data.values())),
+            graphs.pie_chart(list(self.data.keys()), list(self.data.values()), self.pie_path),
             cls=plotly.utils.PlotlyJSONEncoder,
         )
 

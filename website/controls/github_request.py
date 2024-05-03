@@ -2,7 +2,6 @@ import os
 import time
 import requests
 import json
-from ..config.config import GitHub_User, github_filepath, timer
 
 
 # Makes the request to the url in order to get the data
@@ -54,17 +53,6 @@ def load_json(filename):
     return None
 
 
-# creates the lock file that prevents the user from making multiple requests of the API while it already running
-def write_lock_file(lock_file):
-    open(lock_file, "w").close()
-
-
-# Deletes the lock file once the procedure is completed
-def remove_lock_file(lock_file):
-    if os.path.exists(lock_file):
-        os.unlink(lock_file)
-
-
 # Verifies if the json file with the data has been edited in the specified amount of time
 def is_file_recently_modified(filename, max_age_seconds):
     if not os.path.exists(filename):
@@ -79,14 +67,14 @@ def is_repo_updated(repo_name, new_repo, old_repo):
     return new_repo["updated_at"] == old_repo[repo_name]["updated"]
 
 
-def does_file_exist(filepath):
-    return os.path.exists(filepath)
-
-
 # Main method for getting and storing the data collected from the GitHub API
-def get_project_info():
+def get_project_info(settings):
 
     print("The request started. Please Wait..")
+
+    github_filepath = settings["github_filepath"]
+    GitHub_User = settings["GitHub_User"]
+    timer = settings["timer"]
 
     # If the file has been edited in the last hour then use the existing data
     if is_file_recently_modified(github_filepath, timer):
@@ -104,7 +92,7 @@ def get_project_info():
                     # Loads the existing json file with repository data in order to compare the new and old data
                     existing_data = load_json(github_filepath)
                     # If the data already exists and now updates where found then just use the old data
-                    if does_file_exist(github_filepath) and is_repo_updated(
+                    if existing_data and is_repo_updated(
                         repo_name, repo_info, existing_data
                     ):
                         all_repo_data[repo_name] = existing_data[repo_name]
@@ -118,5 +106,3 @@ def get_project_info():
             # Convert all repos data into a single json file
             save_to_json(all_repo_data, github_filepath)
             print("All repository information saved.")
-
-

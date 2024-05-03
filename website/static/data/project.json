@@ -14,5 +14,13 @@
         {
             "title": "Languages Used"
         }
-    ]
+    ],
+    "request": {
+        "GitHub_User": "GabrielR1121",
+        "github_filepath": "website/static/data/github.json",
+        "timer": 3600
+    },
+    "pie_chart": {
+        "path": "website/static/data/pie_chart.json"
+    }
 }
