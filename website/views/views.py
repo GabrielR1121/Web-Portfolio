@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, send_file
 import json
 from ..models.project import Project
 from ..controls.github_request import get_project_info
-from ..config.config import base_filepath
+from ..config.config import get_config
 import os
 
 # Define the blueprint
@@ -12,7 +12,7 @@ views = Blueprint("views", __name__)
 # Function to load website data from JSON files
 def load_website_data():
     data = {}
-    with open(base_filepath, "r") as json_file:
+    with open(get_config().BASE_FILEPATH, "r") as json_file:
         data["base_data"] = json.load(json_file)
 
     for taskbar in data["base_data"]["taskbar"]:
