@@ -9,11 +9,17 @@ import os
 views = Blueprint("views", __name__)
 # ** See how i can get all data from this dictionary in other paths
 data = {}
+is_running = False
 
 
 # Define a context processor function to load JSON data
 def load_website_data():
+    global is_running
+
+    is_running = True
+    
     get_project_info()
+   
 
     with open(base_filepath, "r") as json_file:
         data["base_data"] = json.load(json_file)
@@ -22,6 +28,7 @@ def load_website_data():
         with open(taskbar["data_location"], "r") as json_file:
             data[taskbar["data_name"]] = json.load(json_file)
 
+    is_running = False
     return data
 
 
