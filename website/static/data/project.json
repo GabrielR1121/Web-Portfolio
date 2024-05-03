@@ -18,7 +18,11 @@
     "request": {
         "GitHub_User": "GabrielR1121",
         "github_filepath": "website/static/data/github.json",
-        "timer": 3600
+        "timer": 3600,
+        "ignore_repo": [
+            "GabrielR1121",
+            "Web-Portfolio"
+        ]
     },
     "pie_chart": {
         "path": "website/static/data/pie_chart.json"

@@ -1,20 +1,43 @@
 {
+    "Web-Portfolio": {
+        "name": "Web-Portfolio",
+        "description": null,
+        "created": "2024-03-04T17:41:43Z",
+        "updated": "2024-05-03T06:07:43Z",
+        "ignore": true,
+        "languages": {
+            "HTML": 12819,
+            "Python": 10478,
+            "CSS": 2847,
+            "JavaScript": 119
+        }
+    },
     "CareBeat": {
         "name": "CareBeat",
         "description": null,
         "created": "2023-09-25T20:43:27Z",
         "updated": "2024-04-29T04:52:29Z",
+        "ignore": false,
         "languages": {
             "Python": 125177,
             "HTML": 52310,
             "CSS": 2027
         }
     },
+    "GabrielR1121": {
+        "name": "GabrielR1121",
+        "description": null,
+        "created": "2023-07-28T04:04:47Z",
+        "updated": "2024-04-28T16:33:01Z",
+        "ignore": true,
+        "languages": {}
+    },
     "Treedle": {
         "name": "Treedle",
         "description": "Recreation of the famous Wordle game. This is for educational purposes in order to practice app making process and MVVC File Structures",
         "created": "2023-07-01T04:08:49Z",
         "updated": "2023-08-09T19:58:24Z",
+        "ignore": false,
         "languages": {
             "C#": 24296
         }
@@ -24,6 +47,7 @@
         "description": "All Leetcode.com exercises solved by me in Java, Python, JavaScript or SQL",
         "created": "2022-09-20T18:47:14Z",
         "updated": "2023-08-02T04:07:05Z",
+        "ignore": false,
         "languages": {
             "Java": 44994,
             "JavaScript": 34285,
@@ -35,6 +59,7 @@
         "description": "Project for the course SICI4029: Fundamentals of Operating Systems. * Project requirements: Develop a creative and innovative program implementing threads. The program must have sound, movement using the run() method of the thread class, and a Graphical User interface(GUI). * Authors: Claudia P. Monge Torres, Gabriel E. Rodriguez Garcia",
         "created": "2020-12-02T18:38:29Z",
         "updated": "2023-07-28T05:45:06Z",
+        "ignore": false,
         "languages": {
             "Java": 19055
         }
@@ -44,6 +69,7 @@
         "description": "A recreation of the classic Clue board game, where players take on the roles of detectives to solve the murder of Mr. Boddy. Built using Java with threaded player movement, and secure card communication. This was built as a group final project from our Data Communications Class",
         "created": "2021-10-28T14:46:33Z",
         "updated": "2023-07-28T04:35:33Z",
+        "ignore": false,
         "languages": {
             "Java": 83648
         }
@@ -53,6 +79,7 @@
         "description": "This is my final project for my database class SICI 4030 (Design and Programming of Databases). The objective was to build a functioning Oracle database step by step. The project includes matrix building, construction of an ERD, sample data, SQL programming, queries, and an SQL-PLUS report.",
         "created": "2022-08-21T23:40:04Z",
         "updated": "2022-08-21T23:47:54Z",
+        "ignore": false,
         "languages": {
             "PLSQL": 47534
         }

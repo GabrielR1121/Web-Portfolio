@@ -21,7 +21,7 @@ def get_user_repos(username):
 
 
 # Makes a request to the GitHub API in order to get the specific information of each repo.
-def get_repo_info(repo_info):
+def get_repo_info(repo_info,ignored_repo):
 
     # Makes the request to the GitHub API to get specific language distribution from the specific repo
     languages_url = repo_info["languages_url"]
@@ -34,6 +34,7 @@ def get_repo_info(repo_info):
         "description": repo_info["description"],
         "created": repo_info["created_at"],
         "updated": repo_info["updated_at"],
+        "ignore": repo_info["name"] in ignored_repo,
         "languages": languages,
     }
     return repo_data
@@ -64,7 +65,10 @@ def is_file_recently_modified(filename, max_age_seconds):
 
 # Verify if the repository has been updated by comparing updated dates
 def is_repo_updated(repo_name, new_repo, old_repo):
-    return new_repo["updated_at"] == old_repo[repo_name]["updated"]
+    try:
+        return new_repo["updated_at"] == old_repo[repo_name]["updated"]
+    except:
+        return False
 
 
 # Main method for getting and storing the data collected from the GitHub API
@@ -75,6 +79,7 @@ def get_project_info(settings):
     github_filepath = settings["github_filepath"]
     GitHub_User = settings["GitHub_User"]
     timer = settings["timer"]
+    ignore_repo = settings["ignore_repo"]
 
     # If the file has been edited in the last hour then use the existing data
     if is_file_recently_modified(github_filepath, timer):
@@ -87,21 +92,19 @@ def get_project_info(settings):
             all_repo_data = {}
             for repo_info in repos_info:
                 repo_name = repo_info["name"]
-                # This if is placed here to prevent the Read Me Repository from being used.
-                if repo_name != GitHub_User:
-                    # Loads the existing json file with repository data in order to compare the new and old data
-                    existing_data = load_json(github_filepath)
-                    # If the data already exists and now updates where found then just use the old data
-                    if existing_data and is_repo_updated(
-                        repo_name, repo_info, existing_data
-                    ):
-                        all_repo_data[repo_name] = existing_data[repo_name]
-                        print(f"Using existing data for {repo_name}.")
-                    else:
-                        # If the data has changed then retrive that repo info and store it
-                        repo_data = get_repo_info(repo_info)
-                        if repo_data:
-                            all_repo_data[repo_name] = repo_data
+                # Loads the existing json file with repository data in order to compare the new and old data
+                existing_data = load_json(github_filepath)
+                # If the data already exists and now updates where found then just use the old data
+                if existing_data and is_repo_updated(
+                    repo_name, repo_info, existing_data
+                ):
+                    all_repo_data[repo_name] = existing_data[repo_name]
+                    print(f"Using existing data for {repo_name}.")
+                else:
+                    # If the data has changed then retrive that repo info and store it
+                    repo_data = get_repo_info(repo_info, ignore_repo)
+                    if repo_data:
+                        all_repo_data[repo_name] = repo_data
 
             # Convert all repos data into a single json file
             save_to_json(all_repo_data, github_filepath)

@@ -11,9 +11,12 @@ class Project:
     #  * DESCRIPTION of the repository
     #  * The date the repository was CREATED
     #  * The date the repository was last UPDATED
+    #  * Boolean value to see if repo should be IGNORED 
     #  * A dictionary of the LANGUAGE distribution of the repository
     #  * The DATA dictionary will hold the processed data from the language dictionary
-    def __init__(self, name, description, created_at, updated_at, languages,pie_path):
+    def __init__(
+        self, name, description, created_at, updated_at, languages, pie_path
+    ):
         self.name = name
         self.description = description
         self.created = self.convert_to_date(created_at)
@@ -35,7 +38,9 @@ class Project:
 
         # Calls the pie_chart method in the graphs.py file in order to create the pie chart
         return json.dumps(
-            graphs.pie_chart(list(self.data.keys()), list(self.data.values()), self.pie_path),
+            graphs.pie_chart(
+                list(self.data.keys()), list(self.data.values()), self.pie_path
+            ),
             cls=plotly.utils.PlotlyJSONEncoder,
         )
 
