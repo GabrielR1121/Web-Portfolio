@@ -4,23 +4,55 @@ from ..models.project import Project
 from ..controls.github_request import get_project_info
 from ..config.config import get_config
 import os
+from datetime import datetime
 
 # Define the blueprint
 views = Blueprint("views", __name__)
 
 
-# Function to load website data from JSON files
 def load_website_data():
     data = {}
-    with open(get_config().BASE_FILEPATH, "r") as json_file:
+    config = get_config()
+    base_filepath = config.BASE_FILEPATH
+
+    # Load base data
+    with open(base_filepath, "r") as json_file:
         data["base_data"] = json.load(json_file)
 
+    # Load taskbar data
     for taskbar in data["base_data"]["taskbar"]:
         with open(taskbar["data_location"], "r") as json_file:
             data[taskbar["data_name"]] = json.load(json_file)
 
-    get_project_info(data["project_data"]["request"])
+    # Process repo data
+    repo_data = get_project_info(data["project_data"]["request"])
+    try:
+        # Update last_updated in base data
+        first_key = next(iter(repo_data["projects"]))  # Get the first key
+        first_value = repo_data["projects"][
+            first_key
+        ]  # Get the value associated with the first key
+        data["base_data"]["last_updated"] += convert_to_date(first_value["updated"])
+
+        # Write updated base data back to file
+        with open(base_filepath, "w") as f:
+            json.dump(data["base_data"], f, indent=3)
+    except Exception as e:
+        data["base_data"]["last_updated"] += "TBD"
+        print(f"Error: {e}")
+
     return data
+
+
+# Converts the raw date from the GitHub API into a more readable date
+def convert_to_date(date):
+    # Convert string to datetime object
+    datetime_obj = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
+
+    # Format the datetime object
+    formatted_date = datetime_obj.strftime("%B %d, %Y")
+
+    return formatted_date
 
 
 # Context processor to inject data into templates
@@ -63,7 +95,8 @@ def projects():
         with open(git_path, "r") as json_file:
             github_data = json.load(json_file)
         projects = {}
-        for key, value in github_data.items():
+
+        for key, value in github_data["projects"].items():
             if not value["ignore"]:
                 projects[key] = Project(
                     value["name"],

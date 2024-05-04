@@ -21,7 +21,7 @@ def get_user_repos(username):
 
 
 # Makes a request to the GitHub API in order to get the specific information of each repo.
-def get_repo_info(repo_info,ignored_repo):
+def get_repo_info(repo_info, ignored_repo):
 
     # Makes the request to the GitHub API to get specific language distribution from the specific repo
     languages_url = repo_info["languages_url"]
@@ -40,8 +40,11 @@ def get_repo_info(repo_info,ignored_repo):
     return repo_data
 
 
+
+
 # Takes the data and turns it into a json file
 def save_to_json(data, filename):
+
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
 
@@ -66,7 +69,7 @@ def is_file_recently_modified(filename, max_age_seconds):
 # Verify if the repository has been updated by comparing updated dates
 def is_repo_updated(repo_name, new_repo, old_repo):
     try:
-        return new_repo["updated_at"] == old_repo[repo_name]["updated"]
+        return new_repo["updated_at"] == old_repo["projects"][repo_name]["updated"]
     except:
         return False
 
@@ -90,6 +93,7 @@ def get_project_info(settings):
         repos_info = get_user_repos(GitHub_User)
         if repos_info:
             all_repo_data = {}
+            all_repo_data["projects"] = {}
             for repo_info in repos_info:
                 repo_name = repo_info["name"]
                 # Loads the existing json file with repository data in order to compare the new and old data
@@ -98,14 +102,18 @@ def get_project_info(settings):
                 if existing_data and is_repo_updated(
                     repo_name, repo_info, existing_data
                 ):
-                    all_repo_data[repo_name] = existing_data[repo_name]
+                    all_repo_data["projects"][repo_name] = existing_data["projects"][
+                        repo_name
+                    ]
                     print(f"Using existing data for {repo_name}.")
                 else:
                     # If the data has changed then retrive that repo info and store it
                     repo_data = get_repo_info(repo_info, ignore_repo)
                     if repo_data:
-                        all_repo_data[repo_name] = repo_data
+                        all_repo_data["projects"][repo_name] = repo_data
 
             # Convert all repos data into a single json file
             save_to_json(all_repo_data, github_filepath)
+
             print("All repository information saved.")
+            return all_repo_data

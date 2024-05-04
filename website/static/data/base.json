@@ -1,36 +1,37 @@
 {
-    "title": "Not Name",
-    "taskbar": [
-        {
-            "name": "Home",
-            "url": "/",
-            "data_location":"website/static/data/home.json",
-            "data_name":"home_data"
-        },
-        {
-            "name": "Awards",
-            "url": "/awards",
-            "data_location":"website/static/data/awards.json",
-            "data_name":"award_data"
-        },
-        {
-            "name": "Leadership",
-            "url": "/leadership",
-            "data_location":"website/static/data/leadership.json",
-            "data_name":"leadership_data"
-        },
-        {
-            "name": "Projects",
-            "url": "/projects",
-            "data_location":"website/static/data/project.json",
-            "data_name":"project_data"
-        },
-        {
-            "name": "Work Experience",
-            "url": "/work-experience",
-            "data_location":"website/static/data/work.json",
-            "data_name":"work_data"
-        }
-    ],
-    "copyright": "Gabriel E. Rodriguez Garcia. All rights reserved."
+   "title": "Not Name",
+   "taskbar": [
+      {
+         "name": "Home",
+         "url": "/",
+         "data_location": "website/static/data/home.json",
+         "data_name": "home_data"
+      },
+      {
+         "name": "Awards",
+         "url": "/awards",
+         "data_location": "website/static/data/awards.json",
+         "data_name": "award_data"
+      },
+      {
+         "name": "Leadership",
+         "url": "/leadership",
+         "data_location": "website/static/data/leadership.json",
+         "data_name": "leadership_data"
+      },
+      {
+         "name": "Projects",
+         "url": "/projects",
+         "data_location": "website/static/data/project.json",
+         "data_name": "project_data"
+      },
+      {
+         "name": "Work Experience",
+         "url": "/work-experience",
+         "data_location": "website/static/data/work.json",
+         "data_name": "work_data"
+      }
+   ],
+   "copyright": "Gabriel E. Rodriguez Garcia. All rights reserved.",
+   "last_updated": "This Portfolio was last updated on : May 03, 2024"
 }
