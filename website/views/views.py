@@ -32,13 +32,14 @@ def load_website_data():
         first_value = repo_data["projects"][
             first_key
         ]  # Get the value associated with the first key
-        data["base_data"]["last_updated"] += convert_to_date(first_value["updated"])
+        data["base_data"]["update_msg"]["date"] = convert_to_date(
+            first_value["updated"]
+        )
 
         # Write updated base data back to file
         with open(base_filepath, "w") as f:
             json.dump(data["base_data"], f, indent=3)
     except Exception as e:
-        data["base_data"]["last_updated"] += "TBD"
         print(f"Error: {e}")
 
     return data

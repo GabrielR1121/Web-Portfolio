@@ -3,43 +3,38 @@
 {% block subtitle %}{{home_data.subtitle}}{% endblock %}
 
 {% block content %}
+<!-- This container is a problem for the centralization of the data on the page -->
 <div class="content-container">
-    <table>
-        <tr>
-            <td>
-                <h1>{{home_data.name}}</h1>
-            </td>
+    <div class="row">
+        <div class="col-6 flex-wrap">
+            <h1>{{home_data.name}}</h1>
+            <p class="content-text">{{home_data.about}}</p>
+        </div>
+        <div class="col-6 align-self-start">
+            <img class="img-fluid content-image" src="{{home_data.profile_picture.link}}"
+                alt="{{home_data.profile_picture.alt}}">
 
-        </tr>
-        <tr>
-            <td>
-                <p class="content-text">{{home_data.about}}</p>
-            </td>
-        </tr>
-    </table>
-
-
-    <table>
-        <tr>
-            <td><img class="content-image" src="{{home_data.profile_picture.link}}"
-                    alt="{{home_data.profile_picture.alt}}"></td>
-        </tr>
-        <tr>
-            <td>
-                <a class="content-resume" href="{{home_data.resume.link}}">{{home_data.resume.title}}</a>
-            </td>
-        </tr>
-        <tr>
-
-            <td>
-                <div class="content-icons">
-                    {% for data in home_data.other_websites %}
-                    <a href="{{data.link}}" class="{{data.class}}" target="{{data.target}}">
-                        <img src="{{data.image_path}}" alt="{{data.alt}}">
-                        {% endfor %}
+            <div class="row justify-content-center flex-nowrap">
+                <div class="col-12 flex-wrap">
+                    <a class="btn btn-primary content-resume"
+                        href="{{home_data.resume.link}}">{{home_data.resume.title}}</a>
                 </div>
-            </td>
-        </tr>
-    </table>
+            </div>
+
+            <div class="row justify-content-center flex-nowrap">
+                <div class="col-12 flex-wrap">
+                    <div class="content-icons">
+                        {% for data in home_data.other_websites %}
+                        <a href="{{data.link}}" class="{{data.class}}" target="{{data.target}}">
+                            <img src="{{data.image_path}}" alt="{{data.alt}}">
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </div>
 {% endblock %}

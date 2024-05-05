@@ -11,6 +11,9 @@ body {
     background-color: #228B22;
 }
 
+ul {
+    justify-content: right;
+}
 
 a,
 footer {
@@ -33,9 +36,17 @@ nav {
     justify-content: space-around;
 }
 
+li,
+.navbar-brand {
+    display: inline-block;
+    font-size: 30px;
+}
+
+
+
 
 nav a:not(:last-child)::after {
-    content: "|";
+    /* content: "|"; */
     margin-left: 10px;
     margin-right: 10px;
     color: #000;
