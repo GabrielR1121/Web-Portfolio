@@ -172,11 +172,8 @@ body {
 
 .carousel-inner img {
     width: 500px !important;
-    /* Adjust to your desired width */
     height: 300px !important;
-    /* Adjust to your desired height */
     margin: auto;
-    /* Optional: Center the image horizontally */
 }
 
 .awards-table {
@@ -190,9 +187,11 @@ body {
     padding: 10px;
 }
 
-.awards-table tr {
-    text-align: right;
+.awards-table tr ul li {
+    text-align: left;
+    color: red;
 }
+
 
 /* End of Awards Css */
 

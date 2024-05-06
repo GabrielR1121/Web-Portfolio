@@ -1,65 +1,71 @@
 {% extends "base.html" %}
 {% block title %}{{ award_data.title }}{% endblock %}
 {% block subtitle %}{{ award_data.subtitle }}{% endblock %}
-
+<!-- Image carousel is still not functioning correctly. It spins once and never starts again -->
 {% block content %}
-<table class="awards-table">
-    {% for award in award_data.awards %}
-    <tr>
-        <th>{{ award.competition }}</th>
-        <th>{{ award.award }}</th>
-        <th>{{ award.date }}</th>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <div id="{{ award.carousel.id }}" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    {% for image in award.media.images %}
-                    <li data-target="#{{ award.carousel.id }}" data-slide-to="{{ loop.index }}" {% if loop.first
-                        %}class="active" {% endif %}></li>
-                    {% endfor %}
-                    {% for video in award.media.videos %}
-                    <li data-target="#{{ award.carousel.id }}" data-slide-to="{{ loop.index }}" {% if loop.first
-                        %}class="active" {% endif %}></li>
-                    {% endfor %}
-                </ol>
-                <div class="carousel-inner">
-                    {% for image in award.media.images %}
-                    <div class="carousel-item {% if loop.first %}active{% endif %}">
-                        <img class="d-block w-100" src="{{ image.src }}" alt="{{ image.alt }}">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for award in award_data.awards %}
+            <div class="row">
+                <div class="col-6" style="font-weight: bolder;">
+                    {{award.competition}}
+                </div>
+
+                <div class="col-4" style="font-weight: bolder;">
+                    {{award.award}}
+                </div>
+
+                <div class="col-2" style="font-weight: bolder;">
+                    {{award.date}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-7">
+                    <div id="{{ award.carousel.id }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <ol class="carousel-indicators">
+                            {% for image in award.media.images %}
+                            <li data-bs-target="#{{ award.carousel.id }}" data-bs-slide-to="{{ loop.index }}"
+                                {% if loop.first %}class="active" {% endif %}></li>
+                            {% endfor %}
+                            {% for video in award.media.videos %}
+                            <li data-bs-target="#{{ award.carousel.id }}" data-bs-slide-to="{{ loop.index }}"
+                                {% if loop.first %}class="active" {% endif %}></li>
+                            {% endfor %}
+                        </ol>
+                        <div class="carousel-inner">
+                            {% for image in award.media.images %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                <img class="d-block w-100" src="{{ image.src }}" alt="{{ image.alt }}">
+                            </div>
+                            {% endfor %}
+                            {% for video in award.media.videos %}
+                            <div class="carousel-item">
+                                <iframe src="{{ video.src }}" width="560" height="314"
+                                    style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                                    allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    allowFullScreen="true" class="w-100" alt="{{ video.description }}"></iframe>
+                            </div>
+                            {% endfor %}
+                        </div>
+
                     </div>
-                    {% endfor %}
-                    {% for video in award.media.videos %}
-                    <div class="carousel-item">
-                        <iframe src="{{ video.src }}" width="560" height="314" style="border:none;overflow:hidden"
-                            scrolling="no" frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                            allowFullScreen="true" class="w-100" alt="{{ video.description }}"></iframe>
-                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    {% for detail in award.details %}
+                    <p style="font-size: 20px;">{{ detail }}</p>
+                    <br>
                     {% endfor %}
                 </div>
-                {% if award.media.images | length > 1 or award.media.videos | length > 1 %}
-                <a class="carousel-control-prev" href="#{{ award.carousel.id }}" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#{{ award.carousel.id }}" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                {% endif %}
             </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <ul>
-                {% for detail in award.details %}
-                <li>{{ detail }}</li>
-                {% endfor %}
-            </ul>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
