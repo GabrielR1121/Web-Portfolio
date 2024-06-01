@@ -1,30 +1,48 @@
 {% extends "base.html" %}
-{% block title %}{{project_data.title}}{% endblock %}
-{% block subtitle %}{{project_data.subtitle}}{% endblock %}
+{% block title %}{{ project_data.title }}{% endblock %}
+{% block subtitle %}{{ project_data.subtitle }}{% endblock %}
 
-{%block content%}
-<table class="outer-table">
-    <tr>
-        {%for header in project_data.table_header%}
-        <th>{{header.title}}</th>
+{% block content %}
+<div style="overflow-x: auto;width:100%;max-width:100%">
+    <table style="width: 100%; text-align: center; margin-top: 20px; margin-bottom: 20px; background-color: #D3D3D3;">
+        <tr>
+            {% for header in project_data.table_header %}
+            <th style="border: 2px solid #000;">{{ header.title }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for key, data in projects.items() %}
+        <tr style="border: 2px solid #000;">
+            <td style="border: 2px solid #000;">{{ data.name }}</td>
+            <td style="border: 2px solid #000;">{{ data.created }} - {{ data.updated }}</td>
+            <td>
+                <div>
+                    <div>
+                        {% for item in data.topics %}
+                        {% if loop.index0 % 3 == 0 %}
+                        <div class="d-flex flex-wrap justify-content-center">
+                            {% endif %}
+                            <div class="rounded-pill bg-secondary text-white m-2 p-2">{{ item }}</div>
+                            {% if loop.index0 % 3 == 2 or loop.last %}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td style="border: 2px solid #000;">{{ data.description }}</td>
+            <td style="border: 2px solid #000;">
+                <div id="chart{{ loop.index }}"></div>
+            </td>
+        </tr>
         {% endfor %}
-    </tr>
+    </table>
+</div>
 
-    {% for key, data in projects.items() %}
-    <tr>
-        <td>{{data.name}}</td>
-        <td>{{data.created}} - {{data.updated}}</td>
-        <td>{{data.description}}</td>
-        <td>
-            <div id="chart{{ loop.index }}"></div>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
 <script>
     {% for key, project in projects.items() %}
     var {{ project.name| replace('-', '_') }} = {{ project.create_chart() | safe }};
     Plotly.plot("chart{{ loop.index }}", {{ project.name | replace('-', '_') }}, {});
     {% endfor %}
 </script>
-{%endblock%}
+{% endblock %}

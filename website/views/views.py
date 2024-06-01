@@ -100,11 +100,13 @@ def projects():
         for key, value in github_data["projects"].items():
             if not value["ignore"]:
                 projects[key] = Project(
+                    value["url"],
                     value["name"],
                     value["description"],
                     value["created"],
                     value["updated"],
                     value["languages"],
+                    value["topics"],
                     pie_path,
                 )
         return render_template("projects.html", projects=projects)

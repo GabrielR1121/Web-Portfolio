@@ -7,20 +7,31 @@ from datetime import datetime
 # This class is to process the data from the projects collected from the GitHub API
 class Project:
     #  Each Project class will have the:
+    #  * The URL to the repo
     #  * NAME of the repository
     #  * DESCRIPTION of the repository
     #  * The date the repository was CREATED
     #  * The date the repository was last UPDATED
-    #  * Boolean value to see if repo should be IGNORED 
     #  * A dictionary of the LANGUAGE distribution of the repository
+    #  * Topics asssociated with the repo
     #  * The DATA dictionary will hold the processed data from the language dictionary
     def __init__(
-        self, name, description, created_at, updated_at, languages, pie_path
+        self,
+        url,
+        name,
+        description,
+        created_at,
+        updated_at,
+        languages,
+        topics,
+        pie_path,
     ):
+        self.url = url
         self.name = name
-        self.description = description
+        self.description = self.check_description(description)
         self.created = self.convert_to_date(created_at)
         self.updated = self.convert_to_date(updated_at)
+        self.topics = topics
         self.languages = {language: int(value) for language, value in languages.items()}
         self.pie_path = pie_path
         self.data = {}
@@ -53,3 +64,8 @@ class Project:
         formatted_date = datetime_obj.strftime("%B %d, %Y")
 
         return formatted_date
+
+    def check_description(self, text):
+        if text:
+            return text
+        return "This repository has not been given a description yet."

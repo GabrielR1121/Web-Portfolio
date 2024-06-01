@@ -1,24 +1,28 @@
 {
     "projects": {
         "Web-Portfolio": {
+            "url": "https://github.com/GabrielR1121/Web-Portfolio",
             "name": "Web-Portfolio",
             "description": null,
             "created": "2024-03-04T17:41:43Z",
-            "updated": "2024-05-05T04:49:41Z",
+            "updated": "2024-05-06T02:59:35Z",
             "ignore": true,
+            "topics": [],
             "languages": {
-                "HTML": 13514,
+                "HTML": 13362,
                 "Python": 12072,
-                "CSS": 2961,
+                "CSS": 2854,
                 "JavaScript": 119
             }
         },
         "CareBeat": {
+            "url": "https://github.com/GabrielR1121/CareBeat",
             "name": "CareBeat",
             "description": null,
             "created": "2023-09-25T20:43:27Z",
             "updated": "2024-04-29T04:52:29Z",
             "ignore": false,
+            "topics": [],
             "languages": {
                 "Python": 125177,
                 "HTML": 52310,
@@ -26,29 +30,46 @@
             }
         },
         "GabrielR1121": {
+            "url": "https://github.com/GabrielR1121/GabrielR1121",
             "name": "GabrielR1121",
             "description": null,
             "created": "2023-07-28T04:04:47Z",
             "updated": "2024-04-28T16:33:01Z",
             "ignore": true,
+            "topics": [],
             "languages": {}
         },
         "Treedle": {
+            "url": "https://github.com/GabrielR1121/Treedle",
             "name": "Treedle",
             "description": "Recreation of the famous Wordle game. This is for educational purposes in order to practice app making process and MVVC File Structures",
             "created": "2023-07-01T04:08:49Z",
             "updated": "2023-08-09T19:58:24Z",
             "ignore": false,
+            "topics": [
+                "csharp",
+                "mvvc",
+                "net-framework",
+                "wordle-game"
+            ],
             "languages": {
                 "C#": 24296
             }
         },
         "LeetCode-Exercises": {
+            "url": "https://github.com/GabrielR1121/LeetCode-Exercises",
             "name": "LeetCode-Exercises",
             "description": "All Leetcode.com exercises solved by me in Java, Python, JavaScript or SQL",
             "created": "2022-09-20T18:47:14Z",
             "updated": "2023-08-02T04:07:05Z",
             "ignore": false,
+            "topics": [
+                "java",
+                "javascript",
+                "leetcode",
+                "python3",
+                "sql"
+            ],
             "languages": {
                 "Java": 44994,
                 "JavaScript": 34285,
@@ -56,31 +77,45 @@
             }
         },
         "Galaxy-Wars": {
+            "url": "https://github.com/GabrielR1121/Galaxy-Wars",
             "name": "Galaxy-Wars",
             "description": "Project for the course SICI4029: Fundamentals of Operating Systems. * Project requirements: Develop a creative and innovative program implementing threads. The program must have sound, movement using the run() method of the thread class, and a Graphical User interface(GUI). * Authors: Claudia P. Monge Torres, Gabriel E. Rodriguez Garcia",
             "created": "2020-12-02T18:38:29Z",
             "updated": "2023-07-28T05:45:06Z",
             "ignore": false,
+            "topics": [],
             "languages": {
                 "Java": 19055
             }
         },
         "ClueBoardGame": {
+            "url": "https://github.com/GabrielR1121/ClueBoardGame",
             "name": "ClueBoardGame",
             "description": "A recreation of the classic Clue board game, where players take on the roles of detectives to solve the murder of Mr. Boddy. Built using Java with threaded player movement, and secure card communication. This was built as a group final project from our Data Communications Class",
             "created": "2021-10-28T14:46:33Z",
             "updated": "2023-07-28T04:35:33Z",
             "ignore": false,
+            "topics": [
+                "clue",
+                "final-project",
+                "game-design",
+                "java",
+                "multithreading",
+                "real-time-networking",
+                "threads"
+            ],
             "languages": {
                 "Java": 83648
             }
         },
         "Monoloro_Final_Project": {
+            "url": "https://github.com/GabrielR1121/Monoloro_Final_Project",
             "name": "Monoloro_Final_Project",
             "description": "This is my final project for my database class SICI 4030 (Design and Programming of Databases). The objective was to build a functioning Oracle database step by step. The project includes matrix building, construction of an ERD, sample data, SQL programming, queries, and an SQL-PLUS report.",
             "created": "2022-08-21T23:40:04Z",
             "updated": "2022-08-21T23:47:54Z",
             "ignore": false,
+            "topics": [],
             "languages": {
                 "PLSQL": 47534
             }

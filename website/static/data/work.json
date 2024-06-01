@@ -21,6 +21,12 @@
             "logo": "../static/images/Logos/pratt-logo.png",
             "class": "pratt-logo",
             "role": "Software Developer, Intern",
+            "skills": [
+                "Teamwork",
+                "Oracle Database",
+                "Data Management",
+                "MySQL"
+            ],
             "description": [
                 {
                     "text": "Transferred company's large-scale Oracle legacy database to modern MySQL database, enhancing query efficiency."
@@ -37,6 +43,13 @@
             "logo": "../static/images/Logos/pratt-logo.png",
             "class": "pratt-logo",
             "role": "Software Developer, Intern",
+            "skills": [
+                "Teamwork",
+                "JavaScript",
+                "Agile Methodologies",
+                "Product Testing",
+                "C#"
+            ],
             "description": [
                 {
                     "text": "Developed user management pages using C# and JavaScript for in-house software."
@@ -53,6 +66,10 @@
             "logo": "../static/images/Logos/UPR_at_Bayamon_Seal.svg.png",
             "class": "upr-logo",
             "role": "Programming Tutor",
+            "skills": [
+                "Java",
+                "Python"
+            ],
             "description": [
                 {
                     "text": "Tutored students in introductory programming courses that included algorithms and development using Java and Python."
@@ -63,6 +80,27 @@
             ],
             "start": "August 2020",
             "end": "May 2022"
+        },
+        {
+            "name": "Puerto Rico Power Authority",
+            "logo": "../static/images/Logos/PREPA-logo.jpg",
+            "class": "prepa-logo",
+            "role": "Information Technology, Intern",
+            "skills": [
+                "HTML5",
+                "Cascading Style Sheets (CSS)",
+                "Shadowing"
+            ],
+            "description": [
+                {
+                    "text": "Troubleshoot company web page."
+                },
+                {
+                    "text": "Exposure to Oracle database tables."
+                }
+            ],
+            "start": "Febuary 2017",
+            "end": "Febuary 2017"
         }
     ]
 }

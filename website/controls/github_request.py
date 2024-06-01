@@ -30,16 +30,16 @@ def get_repo_info(repo_info, ignored_repo):
 
     # Stores the necessary data in json form
     repo_data = {
+        "url": "https://github.com/" + repo_info["full_name"],
         "name": repo_info["name"],
         "description": repo_info["description"],
         "created": repo_info["created_at"],
         "updated": repo_info["updated_at"],
         "ignore": repo_info["name"] in ignored_repo,
+        "topics": repo_info["topics"],
         "languages": languages,
     }
     return repo_data
-
-
 
 
 # Takes the data and turns it into a json file

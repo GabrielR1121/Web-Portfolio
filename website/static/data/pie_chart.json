@@ -1,17 +1,17 @@
 {
     "title": "",
     "width": 350,
-    "height": 400,
+    "height": 250,
     "margin": {
-        "l": 80,
-        "r": 80,
-        "t": 100,
-        "b": 80
+        "l": 20,
+        "r": 0,
+        "t": 10,
+        "b": 10
     },
     "font": {
         "family": "Arial",
         "size": 12
     },
     "plot_bgcolor": "rgb(255, 255, 255)",
-    "paper_bgcolor": "rgb(255, 255, 255)"
+    "paper_bgcolor": "rgb(211, 211, 211)"
 }

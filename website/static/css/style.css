@@ -8,7 +8,7 @@ body {
 
 /* For headers */
 .main-color {
-    background-color: #228B22;
+    background-color: #6B8E23;
 }
 
 ul {
@@ -58,7 +58,8 @@ footer {
     font-size: 14px;
     color: #333;
     margin-top: auto;
-    border-top: 2px solid #36454F;
+    background-color: #D3D3D3;
+
 }
 
 header {
@@ -66,7 +67,9 @@ header {
     padding: 20px;
     font-size: 14px;
     color: #333;
-    border-bottom: 2px solid #36454F;
+    /* border-bottom: 2px solid #36454F; */
+    /* box-shadow: 0px 5px 0px 0px  ; */
+    box-shadow: 0 2px 4px #8FBC8F;
 }
 
 /* End of Base CSS */
@@ -79,7 +82,7 @@ body {
 
 .content-container {
     display: flex;
-    margin-top: 20px;
+    margin-top: 150px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -113,6 +116,14 @@ body {
     width: 50px;
     /* Adjust the size of the icons as needed */
     height: 50px;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* End of Home CSS */
@@ -163,6 +174,10 @@ body {
 .upr-logo {
     width: 130px;
     height: 130px;
+}
+
+.prepa-logo {
+    border-radius: 50%;
 }
 
 /* End of Work Experience Css */
